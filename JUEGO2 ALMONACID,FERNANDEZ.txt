@@ -1,0 +1,37 @@
+import random
+contador = 0
+contplayer = 0
+contmach = 0
+
+while contador <= 5:
+    lista = ["PIEDRA", "PAPEL", "TIJERAS"]
+    opciones = random.choice(lista)
+    jugador = input("Ingrese PIEDRAS,PAPEL,TIJERAS :D   :")
+    if opciones == "PIEDRA" and jugador == "TIJERAS":
+        contmach= contmach + 1
+        print("MACHINE WINS")
+    elif opciones == "TIJERAS" and jugador == "PAPEL":
+        contmach = contmach + 1
+        print("MACHINE WINS")
+    elif opciones == "PAPEL" and jugador == "PIEDRA":
+        contmach = contmach + 1
+        print("MACHINE WINS")
+
+    elif jugador == "PIEDRA" and opciones == "TIJERAS":
+        contplayer = contplayer + 1
+        print("PLAYER WINS")
+    elif jugador == "TIJERAS" and opciones == "PAPEL":
+        contplayer = contplayer + 1
+        print("PLAYER WINS")
+    elif jugador == "PAPEL" and opciones == "PIEDRA":
+        contplayer = contplayer + 1
+        print("PLAYER WINS")
+    elif jugador == opciones:
+        print("there is a tie")
+    contador = contador + 1
+if contmach > contplayer:
+    print("MACHINE WINS THE GAME: END GAME")
+elif contmach < contplayer:
+    print("PLAYER WINS THE GAME: END GAME ")
+elif contplayer == contmach:
+    print("Tie: END GAME")
